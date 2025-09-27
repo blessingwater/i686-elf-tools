@@ -25,7 +25,7 @@ jobs:
     - name: build
       run: docker run -v "${{ github.workspace }}:/root" --rm lordmilko/i686-elf-tools -parallel -gv ${{ inputs.gcc_version }} -bv ${{ inputs.binutils_version }} -dv ${{ inputs.gdb_version }}
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: i686-elf-tools
         path: ${{ github.workspace }}/build-i686-elf/*.zip
@@ -39,7 +39,7 @@ jobs:
     - name: build
       run: docker run -v "${{ github.workspace }}:/root" --rm lordmilko/i686-elf-tools -parallel -gv ${{ inputs.gcc_version }} -bv ${{ inputs.binutils_version }} -dv ${{ inputs.gdb_version }} -64
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: x86_64-elf-tools
         path: ${{ github.workspace }}/build-x86_64-elf/*.zip
